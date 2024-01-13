@@ -1,8 +1,6 @@
 package com.Flight.repository;
 
 
-
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

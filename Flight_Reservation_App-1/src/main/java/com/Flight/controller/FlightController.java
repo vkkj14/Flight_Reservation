@@ -2,6 +2,7 @@ package com.Flight.controller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -23,5 +24,14 @@ public String findFlights(@RequestParam("from") String from, @RequestParam("to")
 List<Flight> findFlights = flightRepo.findFlights(from , to , departureDate);
 model.addAttribute("findFlights", findFlights);
 return "Display";
+}
+
+@RequestMapping("/showCompleteReservation")
+public String showCompleteReservation(@RequestParam("flightId") Long flightId, ModelMap 
+model) {
+Optional<Flight> findById = flightRepo.findById(flightId);
+Flight flight = findById.get();
+model.addAttribute("flight", flight);
+return "ShowReservation";
 }
 }
