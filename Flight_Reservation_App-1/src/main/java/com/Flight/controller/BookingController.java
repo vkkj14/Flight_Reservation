@@ -49,6 +49,11 @@ public class BookingController {
 	
 	
 	}	
+@RequestMapping("/navBar")
+public String navBar() {
+	
+	return"navBar";
+}
 }
 	
 
