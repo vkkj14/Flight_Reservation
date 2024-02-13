@@ -13,7 +13,9 @@
          DEPARTURE CITY :${flight.departureCity} <br/>
          ARRIVAL CITY :${flight.arrivalCity} <br/>
          DEPARTURE DATE :${flight.dateOfDeparture} <br/>
+         
      <h2>ENTER PASSENGER DETAILS</h2>
+     
          <form action="confirmReservation" method="post">
   <pre>
        FIRST NAME <input type = "text" name ="firstName"/>
@@ -22,7 +24,9 @@
        EMAIL <input type = "text" name ="email"/>
        PHONE <input type = "text" name ="phone"/>
    <input type = "hidden" name = "flightId" value = "${flight.id}"/>
-        <h2>ENTER THE PAYMENT DETAILS</h2>
+   
+        <h3>ENTER THE PAYMENT DETAILS</h3>
+        
               NAME ON THE CARD<input type = "text" name = "nameOfTheCard"/>
                CARD NUMBER <input type = "text" name = "cardNumber"/>
                 CVV <input type = "text" name = "cvv"/>

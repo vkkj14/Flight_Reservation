@@ -7,7 +7,7 @@
 <title>SEARCH FLIGHTS</title>
 </head>
 <body>
-<h2>FIND FLIGHTS</h2>
+<h3>FIND FLIGHTS</h3>
 <form action = "findFlights" method = "post">
 <pre>
     FROM: <input type ="text" name = "from"/>
@@ -15,6 +15,11 @@
      DEPARTURE DATE:<input type = "text" name = "departureDate"/>
 <input type = "Submit" value = "Search"/>
 </pre>
+</form>
+<form  action="bookingDetails">
+<h3>Booking Details</h3>
+<input type="submit" value="Search"/>
+
 </form>
 </body>
 </html>

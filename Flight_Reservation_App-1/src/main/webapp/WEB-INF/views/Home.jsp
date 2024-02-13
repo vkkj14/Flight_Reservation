@@ -5,7 +5,7 @@
 <title>HOME PAGE</title>
 </head>
 <body>
-     <a href="showLoginPage">Click Here To Login</a><br/>
-     <a href="showReg">Click Here To Create New Account</a>
+     <a href="showLoginPage"><input type="submit" value="Login"></a><br/>
+     <a href="showReg"><input type="submit" value="New Account"></a>
 </body>
 </html>

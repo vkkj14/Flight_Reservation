@@ -12,6 +12,8 @@ import com.Flight.entity.Reservation;
 import com.Flight.repository.FlightRepository;
 import com.Flight.repository.PassengerRepository;
 import com.Flight.repository.ReservationRepository;
+import com.Flight.utilities.EmailUtil;
+import com.Flight.utilities.PDFgenerator;
 
 @Service
 public class ReservationServiceImpl implements ReservationService {
@@ -21,10 +23,10 @@ private PassengerRepository passengerRepo;
 private FlightRepository flightRepo;
 @Autowired
 private ReservationRepository reservationRepo;
-//@Autowired
-//private PDFgenerator pdfGenerator;
-//@Autowired
-//private EmailUtil emailUtil;
+@Autowired
+private PDFgenerator pdfGenerator;
+@Autowired
+private EmailUtil emailUtil;
 @Override
 public Reservation bookFlight(ReservationRequest request) {
 	
@@ -44,12 +46,18 @@ public Reservation bookFlight(ReservationRequest request) {
 	reservation.setPassenger(passenger);
 	reservation.setCheckedIn(false);
 	reservation.setNumberOfBags(0);
-//	String filePath = "C:\\ishaan\\sts 14\\FlightReservationapp\\tickets\\reservation" + 
-//	reservation.getId();
+	String filePath = "F:\\Practice project\\pdf" + 
+			reservation.getId()
+			+ ".pdf";
 	reservationRepo.save(reservation);
-//	pdfGenerator.generateItinerary(reservation, filePath);
-//	emailUtil.sendItinerary(passenger.getEmail(), filePath);
+	pdfGenerator.generateItinerary(reservation, filePath);
+	emailUtil.sendItinerary(passenger.getEmail(), filePath);
 	return reservation;
-	} 
+	}
+@Override
+public Optional<Reservation> findByID(long Id) {
+	Optional<Reservation> findById = reservationRepo.findById(Id);
+	return findById;
+} 
 }
 	

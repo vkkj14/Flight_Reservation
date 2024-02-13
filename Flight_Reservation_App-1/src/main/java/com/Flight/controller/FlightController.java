@@ -27,8 +27,7 @@ return "Display";
 }
 
 @RequestMapping("/showCompleteReservation")
-public String showCompleteReservation(@RequestParam("flightId") Long flightId, ModelMap 
-model) {
+public String showCompleteReservation(@RequestParam("flightId") Long flightId, ModelMap model) {
 Optional<Flight> findById = flightRepo.findById(flightId);
 Flight flight = findById.get();
 model.addAttribute("flight", flight);
