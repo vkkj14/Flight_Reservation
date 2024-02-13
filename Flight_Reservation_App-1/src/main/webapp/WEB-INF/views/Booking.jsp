@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Search Booking Details</title>
+<title>Booking Details</title>
 </head>
 <body>
 
